@@ -1,22 +1,28 @@
 ---
 import { Image } from 'astro:assets';
-import courseImage from '../assets/blog/2022-11-course-image-with-text.png';
-import { COURSE_URL } from '../consts';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  href: string;
+  image: ImageMetadata;
+  cta?: string;
+  compact?: boolean;
+}
+
+const { eyebrow, title, href, image, cta = 'Get the course →', compact = false } = Astro.props;
 ---
 
-<section class="course">
+<section class:list={['course', { compact }]}>
   <div class="text">
-    <p class="eyebrow">Online course</p>
-    <h2>Kotlin Coroutines and Flow for Android Development</h2>
-    <p>
-      15+ hours of video covering Coroutines from the fundamentals to exception handling, plus
-      Kotlin Flow, StateFlow, SharedFlow and Channels, all built around real-world Android use
-      cases.
-    </p>
-    <a class="button" href={COURSE_URL}>Get the course →</a>
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    <slot />
+    <a class:list={['button', { ghost: compact }]} href={href}>{cta}</a>
   </div>
-  <a class="art" href={COURSE_URL} tabindex="-1" aria-hidden="true">
-    <Image src={courseImage} alt="" widths={[480, 800]} sizes="(max-width: 800px) 100vw, 480px" />
+  <a class="art" href={href} tabindex="-1" aria-hidden="true">
+    <Image src={image} alt="" widths={[480, 800]} sizes="(max-width: 800px) 100vw, 480px" />
   </a>
 </section>
 
@@ -31,11 +37,19 @@ import { COURSE_URL } from '../consts';
     background: var(--surface);
     border: 1px solid var(--border);
   }
+  .course.compact {
+    background: transparent;
+    grid-template-columns: 1.6fr 1fr;
+    padding: 2rem;
+  }
   h2 {
     font-size: 1.75rem;
     margin: 0 0 0.75rem;
   }
-  .text > p:not(.eyebrow) {
+  .compact h2 {
+    font-size: 1.35rem;
+  }
+  .text :global(p:not(.eyebrow)) {
     color: var(--muted);
     margin: 0 0 1.5rem;
   }
@@ -46,7 +60,8 @@ import { COURSE_URL } from '../consts';
     box-shadow: 0 20px 40px -20px rgb(0 0 0 / 0.35);
   }
   @media (max-width: 800px) {
-    .course {
+    .course,
+    .course.compact {
       grid-template-columns: 1fr;
       padding: 1.5rem;
     }

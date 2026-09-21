@@ -1,0 +1,24 @@
+---
+import CourseCard from './CourseCard.astro';
+import image from '../assets/blog/2022-11-course-image-with-text.png';
+import { COROUTINES_COURSE_URL } from '../consts';
+
+interface Props {
+  compact?: boolean;
+}
+const { compact = true } = Astro.props;
+---
+
+<CourseCard
+  eyebrow="Android course"
+  title="Kotlin Coroutines and Flow for Android Development"
+  href={COROUTINES_COURSE_URL}
+  image={image}
+  cta="View the course →"
+  compact={compact}
+>
+  <p>
+    The popular 15+ hour course on Coroutines, exception handling, Kotlin Flow, StateFlow, SharedFlow
+    and Channels, built around real-world Android use cases.
+  </p>
+</CourseCard>

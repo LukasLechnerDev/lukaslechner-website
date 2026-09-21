@@ -2,22 +2,31 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import profile from '../assets/profile.png';
-import { url } from '../consts';
+import { AI_COURSE_URL, url } from '../consts';
 ---
 
-<Base title="About" description="Lukas Lechner: freelance Android developer, course creator, blogger and speaker from Vienna.">
+<Base title="About" description="Lukas Lechner: AI engineering course creator, software developer with 15+ years of experience, blogger and speaker from Vienna.">
   <div class="container narrow page">
     <Image class="avatar" src={profile} alt="Portrait of Lukas Lechner" width={160} height={160} />
     <p class="eyebrow">About</p>
     <h1>Lukas Lechner</h1>
 
     <ul class="facts">
-      <li><strong>15+ years</strong> as a software developer, 7+ of them focused on Android</li>
+      <li><strong>AI Engineering</strong>: teaching developers to build production-ready LLM applications</li>
+      <li><strong>15+ years</strong> as a software developer, on Android and the backend</li>
       <li><strong>Course creator</strong>, blogger and speaker at international developer conferences</li>
       <li><strong>MSc in Medical Informatics</strong> from the Technical University of Vienna</li>
     </ul>
 
     <div class="prose">
+      <p>
+        Today I help software developers become AI engineers. AI Engineering is about building
+        applications on top of LLMs and, above all, bringing them to production: choosing the right
+        model, keeping costs and latency in check, monitoring, evals and RAG. My course
+        <a href={AI_COURSE_URL}>AI Engineering Fundamentals</a> is where I teach all of it.
+        (<a href={url('from-android-to-ai-engineering/')}>Here's the story of how I got here.</a>)
+      </p>
+      <h2>How I got here</h2>
       <p>
         I'm a passionate software developer with over 15 years of experience. After compulsory school,
         I studied Medical Informatics at the <a href="https://www.tuwien.ac.at/en/">Technical University of Vienna</a>.
@@ -37,18 +46,20 @@ import { url } from '../consts';
         <a href="https://play.google.com/store/apps/details?id=at.billa.service">Billa app</a>.
       </p>
       <p>
-        Since 2020 I've been working as a freelance Android developer for clients like Vienna Insurance
-        Group (Austria), Roche (Switzerland) and SAP (Germany).
+        From 2020 I worked as a freelance Android developer for clients like Vienna Insurance Group
+        (Austria), Roche (Switzerland) and SAP (Germany). In early 2023 I moved to backend development
+        with Spring Boot, and in 2026 I went all in on AI Engineering.
       </p>
       <p>
         In 2020 I also created my first online course, <a href={url('course/')}>Mastering Kotlin Coroutines
         for Android Development</a>, which has since grown into a 15-hour course on Coroutines and Flow.
-        I <a href={url('talks/')}>speak</a> at international conferences like droidcon Vienna, droidcon EMEA
+        Many Android developers still know me as the "Coroutines & Flow guy". I
+        <a href={url('talks/')}>spoke</a> at international conferences like droidcon Vienna, droidcon EMEA
         and droidcon Americas.
       </p>
       <p>
-        On my <a href={url('blog/')}>blog</a>, I write about the topics I'm currently working on, hoping
-        to provide valuable information to fellow developers.
+        On my <a href={url('blog/')}>blog</a>, I write about the topics I'm currently working on, which
+        these days means AI Engineering.
       </p>
       <p>
         Want to work together? <a href="mailto:contact@lukaslechner.com">contact@lukaslechner.com</a>

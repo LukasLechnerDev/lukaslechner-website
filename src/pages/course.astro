@@ -1,27 +1,32 @@
 ---
 import Base from '../layouts/Base.astro';
-import CourseCard from '../components/CourseCard.astro';
-import { COURSE_URL } from '../consts';
+import AiCourse from '../components/AiCourse.astro';
+import CoroutinesCourse from '../components/CoroutinesCourse.astro';
+import { AI_COURSE_URL } from '../consts';
 
-const modules = [
-  ['Coroutine fundamentals', 'Suspend functions, coroutine builders, scopes, contexts and dispatchers'],
-  ['Structured concurrency', 'Jobs, the job hierarchy, cancellation and why it matters on Android'],
-  ['Exception handling', 'try-catch, CoroutineExceptionHandler, SupervisorJob and supervisorScope'],
-  ['Real-world use cases', 'Retrofit, Room, WorkManager, timeouts, retries and parallel requests'],
-  ['Kotlin Flow', 'Flow builders, operators, exception handling and cancellation'],
-  ['Hot & cold flows', 'SharedFlow, StateFlow and Channels, and when to use which'],
+const topics = [
+  ['Choosing the right model', 'What is the cheapest model that still gets the job done?'],
+  ['Context and cost', 'Optimizing the context you send so production bills stay under control'],
+  ['Latency and real users', 'Fast responses, and handling the paths beyond the happy one'],
+  ['Evals', 'The unit tests of AI engineering: knowing your system still works after a change'],
+  ['RAG', 'Retrieval-Augmented Generation to ground LLMs in your own data'],
+  ['LangChain & LangGraph', 'The frameworks for building LLM applications and agents'],
 ];
 ---
 
-<Base title="Course" description="Kotlin Coroutines and Flow for Android Development, a 15+ hour online video course.">
+<Base title="Courses" description="AI Engineering Fundamentals: build real LLM apps in Python. Plus Kotlin Coroutines and Flow for Android.">
   <div class="container page">
-    <CourseCard />
+    <AiCourse />
 
-    <section class="modules">
-      <h2>What you'll learn</h2>
+    <section class="topics">
+      <h2>From demo to production</h2>
+      <p class="intro">
+        Integrating an LLM into a prototype is easy. AI Engineering is about everything that comes
+        after:
+      </p>
       <ul>
         {
-          modules.map(([title, text]) => (
+          topics.map(([title, text]) => (
             <li>
               <h3>{title}</h3>
               <p>{text}</p>
@@ -29,7 +34,12 @@ const modules = [
           ))
         }
       </ul>
-      <a class="button" href={COURSE_URL}>Enroll with a discount →</a>
+      <a class="button" href={AI_COURSE_URL}>Enroll on Udemy →</a>
+    </section>
+
+    <section class="more">
+      <h2>For Android developers</h2>
+      <CoroutinesCourse />
     </section>
   </div>
 </Base>
@@ -38,11 +48,19 @@ const modules = [
   .page {
     padding-top: 3rem;
   }
-  .modules {
+  .topics,
+  .more {
     margin-top: 4rem;
   }
   h2 {
     font-size: 1.6rem;
+    margin: 0 0 0.5rem;
+  }
+  .more h2 {
+    margin-bottom: 1.5rem;
+  }
+  .intro {
+    color: var(--muted);
     margin: 0 0 1.5rem;
   }
   ul {

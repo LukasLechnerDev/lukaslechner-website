@@ -6,14 +6,25 @@ import PostList from '../../components/PostList.astro';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+const isAi = (p: (typeof posts)[number]) => p.data.tags.includes('AI Engineering');
+const aiPosts = posts.filter(isAi);
+const archive = posts.filter((p) => !isAi(p));
 ---
 
-<Base title="Blog" description="Articles about Kotlin, Coroutines, Flow and Android development.">
+<Base title="Blog" description="Articles about AI Engineering, plus an archive of Kotlin Coroutines and Android articles.">
   <div class="container narrow page">
     <p class="eyebrow">Blog</p>
     <h1>Writing</h1>
-    <p class="lead">Articles about Kotlin Coroutines, Flow and Android development.</p>
-    <PostList posts={posts} />
+    <p class="lead">
+      About AI Engineering and building production-ready LLM applications, plus my archive of
+      Kotlin and Android articles.
+    </p>
+
+    <h2>AI Engineering</h2>
+    <PostList posts={aiPosts} />
+
+    <h2>Kotlin & Android archive</h2>
+    <PostList posts={archive} />
   </div>
 </Base>
 
@@ -27,6 +38,16 @@ const posts = (await getCollection('blog')).sort(
   }
   .lead {
     color: var(--muted);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 3rem 0 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
   }
 </style>
