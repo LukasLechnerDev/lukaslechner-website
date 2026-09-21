@@ -1,11 +1,13 @@
 ---
-import { SOCIALS, url } from '../consts';
+import { ACADEMY_URL, SOCIALS, url } from '../consts';
 ---
 
 <footer class="site-footer">
   <div class="container inner">
     <p>© {new Date().getFullYear()} Lukas Lechner · Vienna, Austria</p>
     <ul>
+      <li><a href={ACADEMY_URL}>Pragmatic AI Academy</a></li>
+      <li><a href={url('talks/')}>Talks</a></li>
       {SOCIALS.map((s) => <li><a href={s.href} rel="me noopener">{s.label}</a></li>)}
       <li><a href={url('rss.xml')}>RSS</a></li>
     </ul>

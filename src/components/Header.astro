@@ -1,10 +1,10 @@
 ---
-import { url } from '../consts';
+import { ACADEMY_URL, url } from '../consts';
 
 const links = [
   { href: 'blog/', label: 'Blog' },
   { href: 'course/', label: 'Courses' },
-  { href: 'talks/', label: 'Talks' },
+  { href: 'talks/', label: 'Talks', hideOnPhone: true },
   { href: 'about/', label: 'About' },
 ];
 const path = Astro.url.pathname;
@@ -19,11 +19,12 @@ const path = Astro.url.pathname;
     <nav aria-label="Main">
       {
         links.map((l) => (
-          <a href={url(l.href)} aria-current={path.startsWith(url(l.href)) ? 'page' : undefined}>
+          <a href={url(l.href)} class:list={{ 'hide-phone': l.hideOnPhone }} aria-current={path.startsWith(url(l.href)) ? 'page' : undefined}>
             {l.label}
           </a>
         ))
       }
+      <a class="academy" href={ACADEMY_URL}>Academy<span class="ext"> ↗</span></a>
     </nav>
   </div>
 </header>
@@ -82,6 +83,16 @@ const path = Astro.url.pathname;
     color: var(--text);
     background: var(--surface);
   }
+  nav a.academy {
+    margin-left: 0.4rem;
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+    white-space: nowrap;
+  }
+  nav a.academy:hover {
+    color: var(--accent-text);
+    background: var(--accent);
+  }
   nav a[aria-current='page'] {
     color: var(--text);
     background: var(--surface);
@@ -94,9 +105,24 @@ const path = Astro.url.pathname;
       overflow: hidden;
       clip-path: inset(50%);
     }
+    nav {
+      gap: 0;
+    }
     nav a {
-      padding: 0.4rem 0.55rem;
-      font-size: 0.9rem;
+      padding: 0.35rem 0.45rem;
+      font-size: 0.875rem;
+    }
+    nav a.academy {
+      margin-left: 0.25rem;
+      padding: 0.35rem 0.6rem;
+    }
+    .ext {
+      display: none;
+    }
+  }
+  @media (max-width: 430px) {
+    .hide-phone {
+      display: none;
     }
   }
 </style>

@@ -6,7 +6,7 @@ import PostList from '../components/PostList.astro';
 import AiCourse from '../components/AiCourse.astro';
 import CoroutinesCourse from '../components/CoroutinesCourse.astro';
 import profile from '../assets/profile.png';
-import { AI_COURSE_URL, url } from '../consts';
+import { ACADEMY_URL, AI_COURSE_URL, url } from '../consts';
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -25,7 +25,7 @@ const posts = (await getCollection('blog'))
       </p>
       <div class="actions">
         <a class="button" href={AI_COURSE_URL}>Start the AI course</a>
-        <a class="button ghost" href={url('from-android-to-ai-engineering/')}>Read my story</a>
+        <a class="button ghost" href={ACADEMY_URL}>Pragmatic AI Academy ↗</a>
       </div>
     </div>
     <div class="portrait">

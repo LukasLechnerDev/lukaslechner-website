@@ -5,6 +5,7 @@ export const SITE_DESCRIPTION =
 
 export const AI_COURSE_URL =
   'https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83';
+export const ACADEMY_URL = 'https://pragmatic-ai.academy';
 export const COROUTINES_COURSE_URL = 'https://lukaslechner.com/coroutines-flow-android?source=website';
 
 export const SOCIALS = [
