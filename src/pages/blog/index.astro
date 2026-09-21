@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title="Blog" description="Articles about Kotlin, Coroutines, Flow and Android development.">
+  <div class="container narrow page">
+    <p class="eyebrow">Blog</p>
+    <h1>Writing</h1>
+    <p class="lead">Articles about Kotlin Coroutines, Flow and Android development.</p>
+    <PostList posts={posts} />
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 4rem;
+  }
+  h1 {
+    font-size: 2.6rem;
+    margin: 0 0 0.75rem;
+  }
+  .lead {
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+</style>

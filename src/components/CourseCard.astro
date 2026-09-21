@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import courseImage from '../assets/blog/2022-11-course-image-with-text.png';
+import { COURSE_URL } from '../consts';
+---
+
+<section class="course">
+  <div class="text">
+    <p class="eyebrow">Online course</p>
+    <h2>Kotlin Coroutines and Flow for Android Development</h2>
+    <p>
+      15+ hours of video covering Coroutines from the fundamentals to exception handling, plus
+      Kotlin Flow, StateFlow, SharedFlow and Channels, all built around real-world Android use
+      cases.
+    </p>
+    <a class="button" href={COURSE_URL}>Get the course →</a>
+  </div>
+  <a class="art" href={COURSE_URL} tabindex="-1" aria-hidden="true">
+    <Image src={courseImage} alt="" widths={[480, 800]} sizes="(max-width: 800px) 100vw, 480px" />
+  </a>
+</section>
+
+<style>
+  .course {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin: 0 0 0.75rem;
+  }
+  .text > p:not(.eyebrow) {
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+  .art img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px -20px rgb(0 0 0 / 0.35);
+  }
+  @media (max-width: 800px) {
+    .course {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+    .art {
+      order: -1;
+    }
+  }
+</style>

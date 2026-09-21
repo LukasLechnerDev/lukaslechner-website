@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import CourseCard from '../components/CourseCard.astro';
+import { COURSE_URL } from '../consts';
+
+const modules = [
+  ['Coroutine fundamentals', 'Suspend functions, coroutine builders, scopes, contexts and dispatchers'],
+  ['Structured concurrency', 'Jobs, the job hierarchy, cancellation and why it matters on Android'],
+  ['Exception handling', 'try-catch, CoroutineExceptionHandler, SupervisorJob and supervisorScope'],
+  ['Real-world use cases', 'Retrofit, Room, WorkManager, timeouts, retries and parallel requests'],
+  ['Kotlin Flow', 'Flow builders, operators, exception handling and cancellation'],
+  ['Hot & cold flows', 'SharedFlow, StateFlow and Channels, and when to use which'],
+];
+---
+
+<Base title="Course" description="Kotlin Coroutines and Flow for Android Development, a 15+ hour online video course.">
+  <div class="container page">
+    <CourseCard />
+
+    <section class="modules">
+      <h2>What you'll learn</h2>
+      <ul>
+        {
+          modules.map(([title, text]) => (
+            <li>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="button" href={COURSE_URL}>Enroll with a discount →</a>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 3rem;
+  }
+  .modules {
+    margin-top: 4rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+  }
+  li {
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  li p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+</style>

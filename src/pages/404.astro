@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../consts';
+---
+
+<Base title="Page not found">
+  <div class="container narrow" style="padding-top: 6rem">
+    <p class="eyebrow">404</p>
+    <h1>This page doesn't exist (yet).</h1>
+    <p>Not every article has been migrated yet. <a href={url('blog/')}>Browse the blog</a> or head <a href={url()}>home</a>.</p>
+  </div>
+</Base>

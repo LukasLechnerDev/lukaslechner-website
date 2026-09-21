@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import CourseCard from '../components/CourseCard.astro';
+import profile from '../assets/profile.png';
+import { url } from '../consts';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+---
+
+<Base>
+  <section class="hero container">
+    <div class="intro">
+      <p class="eyebrow">Freelance Android Developer · Vienna</p>
+      <h1>Hi, I'm Lukas. I build Android apps and teach Kotlin Coroutines.</h1>
+      <p class="lead">
+        15+ years in software, most of them spent on Android. I write about Kotlin, Coroutines and
+        Flow, created a 15-hour course on the topic, and speak at conferences like droidcon EMEA and
+        droidcon Americas.
+      </p>
+      <div class="actions">
+        <a class="button" href={url('blog/')}>Read the blog</a>
+        <a class="button ghost" href="mailto:contact@lukaslechner.com">Work with me</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <Image src={profile} alt="Portrait of Lukas Lechner" width={320} height={320} loading="eager" />
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <h2>Latest writing</h2>
+      <a href={url('blog/')}>All posts →</a>
+    </div>
+    <PostList posts={posts} />
+  </section>
+
+  <div class="container section">
+    <CourseCard />
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    font-weight: 750;
+    margin: 0 0 1.25rem;
+    max-width: 20ch;
+  }
+  .lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 38rem;
+    margin: 0 0 2rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .portrait img {
+    display: block;
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 50%;
+    outline: 8px solid var(--accent-soft);
+  }
+  .section {
+    margin-top: 4rem;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .section-head a {
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  @media (max-width: 800px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 3rem;
+      gap: 2rem;
+    }
+    .portrait {
+      order: -1;
+    }
+    .portrait img {
+      width: 7rem;
+      height: 7rem;
+      outline-width: 5px;
+    }
+  }
+</style>

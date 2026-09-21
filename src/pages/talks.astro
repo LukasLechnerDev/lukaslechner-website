@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import photo from '../assets/blog/2020-01-kotlin_night_small-1.png';
+
+const exceptionTalk = 'Why exception handling with Kotlin Coroutines is hard and how to master it';
+const effectiveJava = 'How Effective Java influenced Kotlin';
+
+const talks = [
+  {
+    year: 2020,
+    items: [
+      { title: exceptionTalk, event: 'droidcon Americas' },
+      { title: exceptionTalk, event: 'appsfest / hardfest' },
+      { title: exceptionTalk, event: 'droidcon EMEA' },
+    ],
+  },
+  { year: 2019, items: [{ title: 'Experiments with Kotlin Multiplatform', event: 'AndroidHeads Vienna Meetup' }] },
+  { year: 2018, items: [{ title: effectiveJava, event: 'droidcon Vienna' }] },
+  {
+    year: 2017,
+    items: [
+      { title: effectiveJava, event: 'Kotlin Night Brussels' },
+      { title: effectiveJava, event: 'Kotlin Vienna Meetup' },
+    ],
+  },
+];
+---
+
+<Base title="Talks" description="Conference talks and meetup presentations by Lukas Lechner.">
+  <div class="container narrow page">
+    <p class="eyebrow">Talks</p>
+    <h1>Speaking</h1>
+    <p class="lead">
+      I enjoy sharing what I learn at conferences and meetups. Interested in having me speak at your
+      event? <a href="mailto:contact@lukaslechner.com">Get in touch</a>.
+    </p>
+
+    <Image class="photo" src={photo} alt="Lukas speaking at Kotlin Night Brussels" widths={[700, 1200]} sizes="(max-width: 760px) 100vw, 704px" />
+
+    {
+      talks.map(({ year, items }) => (
+        <section class="year">
+          <h2>{year}</h2>
+          <ul>
+            {items.map((t) => (
+              <li>
+                <span class="title">{t.title}</span>
+                <span class="event">{t.event}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 4rem;
+  }
+  h1 {
+    font-size: 2.6rem;
+    margin: 0 0 0.75rem;
+  }
+  .lead {
+    color: var(--muted);
+    margin: 0 0 2rem;
+  }
+  .photo {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+  }
+  .year {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .title {
+    display: block;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .event {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 560px) {
+    .year {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>

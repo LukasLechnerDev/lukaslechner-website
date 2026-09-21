@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { url } from '../consts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description} type="article">
+  <article class="container narrow post">
+    <a class="back" href={url('blog/')}>← All posts</a>
+    <header>
+      <FormattedDate date={post.data.date} />
+      <h1>{post.data.title}</h1>
+      <ul class="tags">{post.data.tags.map((t) => <li>{t}</li>)}</ul>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post {
+    padding-top: 3rem;
+  }
+  .back {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--muted);
+  }
+  .back:hover {
+    color: var(--accent);
+  }
+  header {
+    margin: 2rem 0 2.5rem;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+    margin: 0.4rem 0 1rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tags li {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+</style>

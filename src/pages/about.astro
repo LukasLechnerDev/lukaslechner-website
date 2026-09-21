@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import profile from '../assets/profile.png';
+import { url } from '../consts';
+---
+
+<Base title="About" description="Lukas Lechner: freelance Android developer, course creator, blogger and speaker from Vienna.">
+  <div class="container narrow page">
+    <Image class="avatar" src={profile} alt="Portrait of Lukas Lechner" width={160} height={160} />
+    <p class="eyebrow">About</p>
+    <h1>Lukas Lechner</h1>
+
+    <ul class="facts">
+      <li><strong>15+ years</strong> as a software developer, 7+ of them focused on Android</li>
+      <li><strong>Course creator</strong>, blogger and speaker at international developer conferences</li>
+      <li><strong>MSc in Medical Informatics</strong> from the Technical University of Vienna</li>
+    </ul>
+
+    <div class="prose">
+      <p>
+        I'm a passionate software developer with over 15 years of experience. After compulsory school,
+        I studied Medical Informatics at the <a href="https://www.tuwien.ac.at/en/">Technical University of Vienna</a>.
+        During my studies, I worked for several companies, building database (SQL, PL/SQL) and C#
+        applications.
+      </p>
+      <p>
+        In 2014 I discovered a real interest in mobile development (Android, to be specific) and
+        jumped into that field after finishing my master's degree. At
+        <a href="http://www.tailored-apps.com/">Tailored Apps</a>, Austria's leading mobile app agency,
+        I worked on some of the country's biggest apps, such as
+        <a href="https://play.google.com/store/apps/details?id=com.diepresse">die Presse</a>,
+        <a href="https://play.google.com/store/apps/details?id=at.geizhals.pv">Geizhals</a> and
+        <a href="https://play.google.com/store/apps/details?id=at.willhaben">willhaben</a>. After that, at
+        <a href="http://riag.digital/">RIAG Digital</a> / <a href="https://www.rewe-group.at/">REWE Group</a>,
+        I helped build state-of-the-art eCommerce apps like the
+        <a href="https://play.google.com/store/apps/details?id=at.billa.service">Billa app</a>.
+      </p>
+      <p>
+        Since 2020 I've been working as a freelance Android developer for clients like Vienna Insurance
+        Group (Austria), Roche (Switzerland) and SAP (Germany).
+      </p>
+      <p>
+        In 2020 I also created my first online course, <a href={url('course/')}>Mastering Kotlin Coroutines
+        for Android Development</a>, which has since grown into a 15-hour course on Coroutines and Flow.
+        I <a href={url('talks/')}>speak</a> at international conferences like droidcon Vienna, droidcon EMEA
+        and droidcon Americas.
+      </p>
+      <p>
+        On my <a href={url('blog/')}>blog</a>, I write about the topics I'm currently working on, hoping
+        to provide valuable information to fellow developers.
+      </p>
+      <p>
+        Want to work together? <a href="mailto:contact@lukaslechner.com">contact@lukaslechner.com</a>
+      </p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 4rem;
+  }
+  .avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    outline: 5px solid var(--accent-soft);
+  }
+  h1 {
+    font-size: 2.6rem;
+    margin: 0 0 1.75rem;
+  }
+  .facts {
+    list-style: none;
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 2.5rem;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+  }
+  .facts li {
+    padding: 0.35rem 0;
+    color: var(--muted);
+  }
+  .facts strong {
+    color: var(--text);
+  }
+</style>

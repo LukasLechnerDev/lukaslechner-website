@@ -1,0 +1,48 @@
+---
+import { SOCIALS, url } from '../consts';
+---
+
+<footer class="site-footer">
+  <div class="container inner">
+    <p>© {new Date().getFullYear()} Lukas Lechner · Vienna, Austria</p>
+    <ul>
+      {SOCIALS.map((s) => <li><a href={s.href} rel="me noopener">{s.label}</a></li>)}
+      <li><a href={url('rss.xml')}>RSS</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 6rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  p {
+    margin: 0;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--accent);
+  }
+</style>
