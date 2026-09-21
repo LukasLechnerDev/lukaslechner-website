@@ -11,10 +11,10 @@ export const COROUTINES_COURSE_URL = 'https://lukaslechner.com/coroutines-flow-a
 import type { IconName } from './icons';
 
 export const SOCIALS: { label: string; href: string; icon: IconName }[] = [
-  { label: 'GitHub', href: 'https://github.com/LukasLechnerDev', icon: 'github' },
   { label: 'YouTube', href: 'https://www.youtube.com/channel/UCr9FeEqCspjGTiOc3HplCqw', icon: 'youtube' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lukas-lechner-58287471/', icon: 'linkedin' },
   { label: 'X', href: 'https://x.com/LukasLechnerDev', icon: 'x' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lukas-lechner-58287471/', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/LukasLechnerDev', icon: 'github' },
   { label: 'Email', href: 'mailto:contact@lukaslechner.com', icon: 'email' },
 ];
 

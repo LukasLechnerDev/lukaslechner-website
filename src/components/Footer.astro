@@ -2,7 +2,6 @@
 import { ACADEMY_URL, SOCIALS, url } from '../consts';
 import { ICONS } from '../icons';
 
-const links = [...SOCIALS, { label: 'RSS feed', href: url('rss.xml'), icon: 'rss' as const }];
 ---
 
 <footer class="site-footer">
@@ -16,7 +15,7 @@ const links = [...SOCIALS, { label: 'RSS feed', href: url('rss.xml'), icon: 'rss
     </div>
     <ul class="socials">
       {
-        links.map((s) => (
+        SOCIALS.map((s) => (
           <li>
             <a href={s.href} rel="me noopener" aria-label={s.label} title={s.label}>
               <svg viewBox="0 0 24 24" aria-hidden="true" fill-rule="evenodd">
