@@ -14,9 +14,11 @@ const path = Astro.url.pathname;
   <div class="container bar">
     <a class="brand" href={url()}>
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="#3f6b35" />
-        <path d="M9.5 7.5v16h11" stroke="#f7faf3" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-        <path d="M20.5 6.5c.5 3 1.9 4.4 4.9 4.9-3 .5-4.4 1.9-4.9 4.9-.5-3-1.9-4.4-4.9-4.9 3-.5 4.4-1.9 4.9-4.9Z" fill="#b9dca0" />
+        <path d="M8 3h16a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6H13l-6.5 5v-5.3A6 6 0 0 1 2 19V9a6 6 0 0 1 6-6Z" fill="#3f6b35" />
+        <g fill="none" stroke="#f7faf3" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 8.5v10.5h5" />
+          <path d="M18 8.5v10.5h5" />
+        </g>
       </svg>
       <span class="name">Lukas Lechner</span>
     </a>
@@ -67,7 +69,7 @@ const path = Astro.url.pathname;
     transition: transform 0.2s ease;
   }
   .brand:hover .mark {
-    transform: rotate(-6deg);
+    transform: translateY(-2px);
   }
   nav {
     display: flex;
