@@ -12,8 +12,7 @@ export const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/LukasLechnerDev' },
   { label: 'YouTube', href: 'https://www.youtube.com/channel/UCr9FeEqCspjGTiOc3HplCqw' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lukas-lechner-58287471/' },
-  { label: 'Twitter', href: 'https://twitter.com/LukasLechnerDev' },
-  { label: 'Stack Overflow', href: 'https://stackoverflow.com/users/2660462/lukle' },
+  { label: 'X', href: 'https://x.com/LukasLechnerDev' },
   { label: 'Email', href: 'mailto:contact@lukaslechner.com' },
 ];
 
