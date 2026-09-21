@@ -1,15 +1,31 @@
 ---
 import { ACADEMY_URL, SOCIALS, url } from '../consts';
+import { ICONS } from '../icons';
+
+const links = [...SOCIALS, { label: 'RSS feed', href: url('rss.xml'), icon: 'rss' as const }];
 ---
 
 <footer class="site-footer">
   <div class="container inner">
-    <p>© {new Date().getFullYear()} Lukas Lechner · Vienna, Austria</p>
-    <ul>
-      <li><a href={ACADEMY_URL}>Pragmatic AI Academy</a></li>
-      <li><a href={url('talks/')}>Talks</a></li>
-      {SOCIALS.map((s) => <li><a href={s.href} rel="me noopener">{s.label}</a></li>)}
-      <li><a href={url('rss.xml')}>RSS</a></li>
+    <div class="meta">
+      <p>© {new Date().getFullYear()} Lukas Lechner · Vienna, Austria</p>
+      <p class="text-links">
+        <a href={ACADEMY_URL}>Pragmatic AI Academy</a>
+        <a href={url('talks/')}>Talks</a>
+      </p>
+    </div>
+    <ul class="socials">
+      {
+        links.map((s) => (
+          <li>
+            <a href={s.href} rel="me noopener" aria-label={s.label} title={s.label}>
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill-rule="evenodd">
+                <path d={ICONS[s.icon]} />
+              </svg>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </footer>
@@ -24,27 +40,53 @@ import { ACADEMY_URL, SOCIALS, url } from '../consts';
   .inner {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.25rem;
     padding-top: 2rem;
     padding-bottom: 2.5rem;
   }
   p {
     margin: 0;
   }
-  ul {
+  .text-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 1.1rem;
+    margin-top: 0.25rem;
   }
-  a {
+  .text-links a {
     color: var(--muted);
     text-decoration: none;
   }
-  a:hover {
+  .text-links a:hover {
     color: var(--accent);
+  }
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    margin: 0 -0.65rem;
+    padding: 0;
+  }
+  .socials a {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    color: var(--muted);
+    transition:
+      color 0.15s ease,
+      background 0.15s ease;
+  }
+  .socials a:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: currentColor;
   }
 </style>
