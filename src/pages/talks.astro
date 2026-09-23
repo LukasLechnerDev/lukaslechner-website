@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import photo from '../assets/blog/2020-01-kotlin_night_small-1.png';
+import { url } from '../consts';
 
 const exceptionTalk = 'Why exception handling with Kotlin Coroutines is hard and how to master it';
 const effectiveJava = 'How Effective Java influenced Kotlin';
@@ -10,17 +11,17 @@ const talks = [
   {
     year: 2020,
     items: [
-      { title: exceptionTalk, event: 'droidcon Americas' },
-      { title: exceptionTalk, event: 'appsfest / hardfest' },
-      { title: exceptionTalk, event: 'droidcon EMEA' },
+      { title: exceptionTalk, event: 'droidcon Americas', link: 'https://www.droidcon.com/media-detail?video=481189746', linkLabel: 'Recording' },
+      { title: exceptionTalk, event: 'appsfest / hardfest', link: 'https://www.youtube.com/watch?v=6iSUfh-RZYc', linkLabel: 'Recording' },
+      { title: exceptionTalk, event: 'droidcon EMEA', link: 'https://www.droidcon.com/media-detail?video=470234589', linkLabel: 'Recording' },
     ],
   },
-  { year: 2019, items: [{ title: 'Experiments with Kotlin Multiplatform', event: 'AndroidHeads Vienna Meetup' }] },
-  { year: 2018, items: [{ title: effectiveJava, event: 'droidcon Vienna' }] },
+  { year: 2019, items: [{ title: 'Experiments with Kotlin Multiplatform', event: 'AndroidHeads Vienna Meetup', link: 'slides-from-my-presentation-experiments-with-kotlin-multiplatform/', linkLabel: 'Slides' }] },
+  { year: 2018, items: [{ title: effectiveJava, event: 'droidcon Vienna', link: 'slides-from-my-presentation-droidcon-vienna-2018/', linkLabel: 'Slides' }] },
   {
     year: 2017,
     items: [
-      { title: effectiveJava, event: 'Kotlin Night Brussels' },
+      { title: effectiveJava, event: 'Kotlin Night Brussels', link: 'slides-from-my-presentation-kotlin-night-brussels-2017/', linkLabel: 'Slides' },
       { title: effectiveJava, event: 'Kotlin Vienna Meetup' },
     ],
   },
@@ -46,7 +47,15 @@ const talks = [
             {items.map((t) => (
               <li>
                 <span class="title">{t.title}</span>
-                <span class="event">{t.event}</span>
+                <span class="event">
+                  {t.event}
+                  {t.link && (
+                    <>
+                      {' · '}
+                      <a href={t.link.startsWith('http') ? t.link : url(t.link)}>{t.linkLabel}</a>
+                    </>
+                  )}
+                </span>
               </li>
             ))}
           </ul>

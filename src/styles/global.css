@@ -225,3 +225,13 @@ h4 {
   padding: 0.5rem;
   text-align: left;
 }
+
+.prose iframe.slides {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
