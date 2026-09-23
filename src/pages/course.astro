@@ -5,24 +5,21 @@ import CoroutinesCourse from '../components/CoroutinesCourse.astro';
 import { AI_COURSE_URL } from '../consts';
 
 const topics = [
-  ['Choosing the right model', 'What is the cheapest model that still gets the job done?'],
-  ['Context and cost', 'Optimizing the context you send so production bills stay under control'],
-  ['Latency and real users', 'Fast responses, and handling the paths beyond the happy one'],
-  ['Evals', 'The unit tests of AI engineering: knowing your system still works after a change'],
-  ['RAG', 'Retrieval-Augmented Generation to ground LLMs in your own data'],
-  ['LangChain & LangGraph', 'The frameworks for building LLM applications and agents'],
+  ['The OpenAI API', 'Working with LLMs from Python, the foundation everything else builds on'],
+  ['Prompt engineering', 'Getting reliable results out of a model instead of lucky one-offs'],
+  ['Structured outputs', 'Making model responses predictable enough for real applications'],
+  ['Portfolio projects', 'Real projects you can show when applying for AI engineering roles'],
 ];
 ---
 
-<Base title="Courses" description="AI Engineering Fundamentals: build real LLM apps in Python. Plus Kotlin Coroutines and Flow for Android.">
+<Base title="Courses" description="AI Engineering Fundamentals: build real LLM apps in Python with the OpenAI API. Plus Kotlin Coroutines and Flow for Android.">
   <div class="container page">
     <AiCourse />
 
     <section class="topics">
-      <h2>From demo to production</h2>
+      <h2>What you'll learn</h2>
       <p class="intro">
-        Integrating an LLM into a prototype is easy. AI Engineering is about everything that comes
-        after:
+        The fundamentals that take you from Python developer to job-ready AI engineer:
       </p>
       <ul>
         {
