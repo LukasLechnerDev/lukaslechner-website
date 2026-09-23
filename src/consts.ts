@@ -1,7 +1,7 @@
 export const SITE_TITLE = 'Lukas Lechner';
 export const SITE_TITLE_SUFFIX = 'AI Engineering';
 export const SITE_DESCRIPTION =
-  'I help software developers become AI engineers: building production-ready applications on top of LLMs.';
+  'I help software developers become AI engineers. 15+ years in the software industry, 12,000+ learners worldwide.';
 
 export const AI_COURSE_URL =
   'https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83';
