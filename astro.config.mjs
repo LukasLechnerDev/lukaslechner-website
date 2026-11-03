@@ -2,10 +2,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages preview lives under /<repo>/. Once the site moves to its own
-// domain, set SITE to https://www.lukaslechner.com and BASE to '/'.
-const site = process.env.SITE ?? 'https://lukaslechnerdev.github.io';
-const base = process.env.BASE ?? '/lukaslechner-website';
+// Served from the custom domain at the root. Override SITE/BASE for a
+// sub-path preview build.
+const site = process.env.SITE ?? 'https://www.lukaslechner.com';
+const base = process.env.BASE ?? '/';
 // Full URLs: Astro neither adds the base nor (wrongly, for rss.xml) a trailing slash to them.
 const to = (path) => new URL(base.replace(/\/?$/, '/') + path, site).href;
 
