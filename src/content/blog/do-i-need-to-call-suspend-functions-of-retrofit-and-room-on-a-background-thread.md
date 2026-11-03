@@ -33,6 +33,6 @@ Of course, you and your development team should also adhere to the convention of
 
 I hope that this article improved your understanding of `suspend` functions and will remove some unnecessary thread switches 😀.
 
-🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://lukaslechner.com/coroutines-flow-android?source=website):
+🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com):
 
-[![](../../assets/blog/2022-11-course-image-with-text.png)](https://lukaslechner.com/coroutines-flow-android?source=website)
+[![](../../assets/blog/2022-11-course-image-with-text.png)](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com)

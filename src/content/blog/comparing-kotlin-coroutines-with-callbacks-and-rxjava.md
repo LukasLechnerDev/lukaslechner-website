@@ -274,6 +274,6 @@ Coroutines get promoted a lot by Google and most of androidx libraries get [buil
 
 If you are happy using RxJava in your application, there is no need to invest in an expensive refactoring to Kotlin Coroutines. This is also the opinion of some experts from Google (check out the last part of this podcast: [187: Coroutines with Manuel Vivo & Sean McQuillan – Fragmented](https://fragmentedpodcast.com/episodes/187/)).
 
-🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://lukaslechner.com/coroutines-flow-android?source=website):
+🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com):
 
-[![](../../assets/blog/2022-11-course-image-with-text.png)](https://lukaslechner.com/coroutines-flow-android?source=website)
+[![](../../assets/blog/2022-11-course-image-with-text.png)](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com)

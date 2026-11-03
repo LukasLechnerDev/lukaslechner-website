@@ -5,11 +5,11 @@ description: "From “Coroutines & Flow guy” to backend developer to AI Engine
 tags: ["AI Engineering", "Career"]
 ---
 
-[![AI Engineering Fundamentals course](../../assets/blog/2026-07-udemy-course-icon-centered.png)](https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83)
+[![AI Engineering Fundamentals course](../../assets/blog/2026-07-udemy-course-icon-centered.png)](https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com)
 
 I released a new course “AI Engineering Fundamentals”.
 
-👉 [https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83](https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83)
+👉 [https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com](https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com)
 
 Below you can find the story about my transition 👇
 
@@ -53,7 +53,7 @@ The LinkedIn Jobs on the Rise Report from 2026 states that the AI Engineer is th
 
 So in February, I decided to go all in on AI Engineering and started working on my first course. Today, after 6 months of hard work, I can proudly announce that the first version of “AI Engineering Fundamentals” is out now on udemy
 
-👉 [https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83](https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83)
+👉 [https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com](https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com)
 
 The course is currently in an “MVP” state, but it already contains about 7 hours of content and more than 50 videos. However, I will spend the rest of the year adding new modules to it, which you will receive automatically for free once you enroll.
 

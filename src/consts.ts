@@ -4,9 +4,9 @@ export const SITE_DESCRIPTION =
   'I help software developers become AI engineers. 15+ years in the software industry, 12,000+ learners worldwide.';
 
 export const AI_COURSE_URL =
-  'https://www.udemy.com/course/ai-engineering-fundamentals-build-real-llm-apps-in-python/?referralCode=D1BA2721D48381A98F83';
+  'https://go.pragmatic-ai.academy/ai-engineering-fundamentals?source=lukaslechner-com';
 export const ACADEMY_URL = 'https://pragmatic-ai.academy';
-export const COROUTINES_COURSE_URL = 'https://lukaslechner.com/coroutines-flow-android?source=website';
+export const COROUTINES_COURSE_URL = 'https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com';
 
 import type { IconName } from './icons';
 

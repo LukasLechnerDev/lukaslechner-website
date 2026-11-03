@@ -27,6 +27,6 @@ The new modules cover:
 *   SharedFlow and StateFlow
 *   Channels
 
-**[Get the Course with a nice discount!](https://lukaslechner.com/coroutines-flow-android?source=website "Get the Course here with a nice discount!")**
+**[Get the Course with a nice discount!](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com "Get the Course here with a nice discount!")**
 
 I hope this course is helpful for a lot of developers!

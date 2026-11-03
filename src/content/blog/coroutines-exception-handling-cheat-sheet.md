@@ -54,7 +54,7 @@ Exception Handling with Kotlin Coroutines is hard. I wrote an extensive [article
 
 * * *
 
-Btw: I also cover exception handling in great detail in my course [“Kotlin Coroutines and Flow for Android Development”](https://lukaslechner.com/coroutines-flow-android?source=website "\"Kotlin Coroutines and Flow for Android Development\"")
+Btw: I also cover exception handling in great detail in my course [“Kotlin Coroutines and Flow for Android Development”](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com "\"Kotlin Coroutines and Flow for Android Development\"")
 
-[![](../../assets/blog/2022-11-course-image-with-text.png)](https://lukaslechner.com/coroutines-flow-android?source=website)
+[![](../../assets/blog/2022-11-course-image-with-text.png)](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com)
 

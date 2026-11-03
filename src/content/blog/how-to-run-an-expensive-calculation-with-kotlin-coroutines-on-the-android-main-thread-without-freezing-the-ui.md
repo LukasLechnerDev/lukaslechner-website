@@ -121,6 +121,6 @@ Now you also know why the concurrency example took much longer than the example 
 
 In this blog post, I demonstrated how you can use Kotlin Coroutines to perform an expensive calculation on the main thread without freezing the UI. I also explained some internal behaviour of the Coroutines library, the functionality of the `suspend` function `yield()` and the differences between concurrency and parallelism. In real-world applications, because of better performance, you should still perform calculations on a background thread.
 
-🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://lukaslechner.com/coroutines-flow-android?source=website)
+🎓 If you enjoyed this article, you probably also like my course about [Kotlin Coroutines and Flow for Android Development](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com)
 
-[![](../../assets/blog/2022-11-course-image-with-text.png)](https://lukaslechner.com/coroutines-flow-android?source=website)
+[![](../../assets/blog/2022-11-course-image-with-text.png)](https://go.pragmatic-ai.academy/coroutines-flow-android?source=lukaslechner-com)
